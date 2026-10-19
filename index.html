@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu site - Versão 3 — corrigida</title>
+  <title>Meu site - Frases motivacionais</title>
+
   <style>
     body {
       margin: 0;
@@ -14,6 +16,7 @@
       background: #88e788;
       padding: 1rem;
     }
+
     .cartao {
       background: #fff;
       border-radius: 20px;
@@ -23,9 +26,55 @@
       box-shadow: 0 20px 50px rgba(0, 0, 0, .25);
       text-align: center;
       color: #1d1d1f;
+      box-sizing: border-box;
     }
-    .emoji { font-size: 4rem; }
-    h1 { margin: .5rem 0; color: #1e9e5a; }
+
+    .emoji {
+      font-size: 4rem;
+    }
+
+    h1 {
+      margin: .5rem 0;
+      color: #1e9e5a;
+      font-size: 1.8rem;
+    }
+
+    /* Esconde o checkbox */
+    #trocar-frase {
+      position: absolute;
+      opacity: 0;
+    }
+
+    /* Mostra a primeira frase inicialmente */
+    .frase2 {
+      display: none;
+    }
+
+    /* Alterna as frases conforme o checkbox */
+    #trocar-frase:checked ~ .frases .frase1 {
+      display: none;
+    }
+
+    #trocar-frase:checked ~ .frases .frase2 {
+      display: block;
+    }
+
+    .botao {
+      display: inline-block;
+      margin: 1.5rem 0;
+      background: #1e9e5a;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background .2s;
+    }
+
+    .botao:hover {
+      background: #167a44;
+    }
+
     .versao {
       margin-top: 1.5rem;
       padding: 1rem;
@@ -34,14 +83,45 @@
       text-align: left;
       line-height: 1.8;
     }
-    code { background: #e5e5ea; padding: 2px 6px; border-radius: 6px; }
-    footer { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e5e5ea; color: #6e6e73; font-size: .85rem; }
+
+    code {
+      background: #e5e5ea;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    footer {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e5e5ea;
+      color: #6e6e73;
+      font-size: .85rem;
+    }
   </style>
 </head>
+
 <body>
   <main class="cartao">
+
     <div class="emoji">🎊</div>
-    <h1>Você não precisa ser melhor que ninguém; precisa apenas continuar sendo melhor do que era ontem.</h1>
+
+    <input type="checkbox" id="trocar-frase">
+
+    <div class="frases">
+      <h1 class="frase1">
+        Você não precisa ser melhor que ninguém;
+        precisa apenas continuar sendo melhor do que era ontem.
+      </h1>
+
+      <h1 class="frase2">
+        Cada dia é uma nova oportunidade para fazer diferente.
+      </h1>
+    </div>
+
+    <label for="trocar-frase" class="botao">
+      Trocar frase
+    </label>
+
     <p>O erro foi corrigido e o robô publicou de novo.</p>
 
     <div class="versao">
@@ -54,6 +134,7 @@
       🎓 UNINOVE · Automação de Processos · DevOps<br>
       Prof. Marcelino Dias da Silva
     </footer>
+
   </main>
 </body>
 </html>
